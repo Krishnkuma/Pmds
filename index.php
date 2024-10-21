@@ -45,7 +45,7 @@ if(isset($_POST["add"])){
         <h2 class="bg-info text-center display-4">PRODUCT</h2>
         <div class="container">
             <?php
-            $query="SELECT * FROM `aashirvaad` ORDER BY id ASC";
+            $query="SELECT * FROM `aashirvaad` WHERE `brand`='aashirvaad' ORDER BY id ASC";
             $result=mysqli_query($conn,$query);
 
             if(mysqli_num_rows($result)>0){
@@ -72,7 +72,7 @@ if(isset($_POST["add"])){
                             
                             <div class="row">
                                 <div class="col-2">Quantity:</div>
-                                <div class="col-10"><input type="number" id="quantity" name="quantity" value="1" style="width: 50px;"><br><br></div>
+                                <div class="col-10"><input type="number" id="quantity" name="quantity" value="1" min="1" max="6" style="width: 50px;"><br><br></div>
                             </div>
                             
                             <div class="row">
@@ -96,7 +96,7 @@ if(isset($_POST["add"])){
                             <input type="hidden" name="hidden_price" value="<?php echo $row["price"];?>">
                             <input type="hidden" name="hidden_price/gm" value="<?php echo $row["price/gm"];?>">
                             <input type="hidden" name="hidden_mrp" value="<?php echo $row["mrp"];?>">
-                            <input type="submit" name="add" value="add to cart" class="w-100"></div>
+                            <input type="submit" name="add" value="add to cart" onclick="cart()" class="w-100"></div>
                         </div>
                         </form> 
                     </div><hr>
@@ -108,5 +108,11 @@ if(isset($_POST["add"])){
 
         </div>
     </main>
+
+    <script>
+        function cart(){
+            alert("product added successful");
+        }
+    </script>
 </body>
 </html>
