@@ -73,7 +73,7 @@ if(isset($_POST["add"])){
                             
                             <div class="row">
                                 <div class="col-2">Quantity:</div>
-                                <div class="col-10"><input type="number" id="quantity" name="quantity" value="1" style="width: 50px;"><br><br></div>
+                                <div class="col-10"><input type="number" id="quantity" name="quantity" min="1" max="6" value="1" style="width: 50px;"><br><br></div>
                             </div>
                             
                             <div class="row">
